@@ -93,7 +93,7 @@ class PTBModel(object):
   def __init__(self, is_training, config, input_):
     self._input = input_
 
-    batch_size = input_.batch_size
+    batch_size = input_.batch_size 
     num_steps = input_.num_steps
     size = config.hidden_size
     vocab_size = config.vocab_size
@@ -109,7 +109,7 @@ class PTBModel(object):
 
     self._initial_state = cell.zero_state(batch_size, data_type())
 
-    with tf.device("/cpu:0"):
+    with tf.device("/gpu:0"):
       embedding = tf.get_variable(
           "embedding", [vocab_size, size], dtype=data_type())
       inputs = tf.nn.embedding_lookup(embedding, input_.input_data)
