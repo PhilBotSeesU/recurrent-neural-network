@@ -93,7 +93,7 @@ class PTBModel(object):
   def __init__(self, is_training, config, input_):
     self._input = input_
 
-    batch_size = input_.batch_size 
+    batch_size = input_.batch_size
     num_steps = input_.num_steps
     size = config.hidden_size
     vocab_size = config.vocab_size
